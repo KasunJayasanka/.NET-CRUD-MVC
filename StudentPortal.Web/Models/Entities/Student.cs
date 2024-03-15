@@ -11,4 +11,5 @@ public class Student
     public string Phone { get; set; }
     
     public bool Subscribed { get; set; }
+    public DateOnly Dob { get; set; }
 }

@@ -29,7 +29,8 @@ namespace StudentPortal.Web.Controllers
                 Name = viewModel.Name,
                 Email = viewModel.Email,
                 Phone=viewModel.Phone,
-                Subscribed=viewModel.Subscribed
+                Subscribed=viewModel.Subscribed,
+                Dob=viewModel.DoB
             };
 
             await dbContext.Students.AddAsync(student);
@@ -67,11 +68,13 @@ namespace StudentPortal.Web.Controllers
                 student.Email = viewModel.Email;
                 student.Phone = viewModel.Phone;
                 student.Subscribed = viewModel.Subscribed;
+                student.Dob = viewModel.Dob;
 
                 await dbContext.SaveChangesAsync();
             }
 
             return RedirectToAction("List","Students");
+            
         }
 
         [HttpPost]
